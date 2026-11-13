@@ -19,7 +19,7 @@
 - [x] Add monorepo structure.
 - [x] Add README, product scope, architecture, database design, and roadmap.
 - [x] Add `.gitignore` and `.env.example`.
-- [x] Add backend CI workflow.\n- [ ] Configure branch protection.
+- [x] Add a manually triggered backend CI workflow.\n- [ ] Restore automatic CI after GitHub Actions runners are available.\n- [ ] Configure branch protection.
 
 **Acceptance:** repository initialized, docs committed, no secrets in source control.
 
