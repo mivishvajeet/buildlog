@@ -3,9 +3,9 @@
 **Database:** PostgreSQL  
 **ORM:** SQLAlchemy 2.x  
 **Migrations:** Alembic  
-**Status:** Proposed logical schema for V1
+**Status:** Initial V1 foundation implemented; remaining domain tables are planned
 
-## 1. Design rules
+## Implementation status\n\nThe first Alembic migration and SQLAlchemy models currently cover `users`, `projects`, `repositories`, `project_repositories`, `milestones`, and `tasks`. GitHub activity, learning, journal, analytics, and public publishing tables remain planned for later increments. The initial migration has not yet been executed against a live local PostgreSQL instance.\n\n## 1. Design rules
 
 - UUID internal primary keys.
 - Retain stable external GitHub IDs and enforce unique constraints.
