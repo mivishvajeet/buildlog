@@ -1,3 +1,5 @@
+from sqlalchemy.orm import configure_mappers
+
 from app.models import Base, Milestone, Project
 
 
@@ -15,3 +17,7 @@ def test_project_constraints_are_declared() -> None:
 def test_milestone_weight_constraint_is_declared() -> None:
     constraints = {constraint.name for constraint in Milestone.__table__.constraints}
     assert "ck_milestones_positive_weight" in constraints
+
+
+def test_orm_relationships_are_configurable() -> None:
+    configure_mappers()
