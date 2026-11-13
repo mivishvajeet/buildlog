@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-COPY pyproject.toml .
+COPY pyproject.toml alembic.ini ./
 COPY backend ./backend
 
 RUN pip install --no-cache-dir .
