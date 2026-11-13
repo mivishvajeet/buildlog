@@ -21,8 +21,6 @@ def upgrade() -> None:
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("email"),
     )
-    op.create_index("ix_users_email", "users", ["email"])
-
     op.create_table(
         "projects",
         sa.Column("user_id", sa.Uuid(), nullable=False),
@@ -123,5 +121,4 @@ def downgrade() -> None:
     op.drop_table("milestones")
     op.drop_table("repositories")
     op.drop_table("projects")
-    op.drop_index("ix_users_email", table_name="users")
     op.drop_table("users")
