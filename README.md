@@ -74,4 +74,4 @@ The private workspace is authenticated. The public API returns only allowlisted,
 
 ## Status
 
-Product definition and architecture baseline are documented. Implementation has not yet started.
+Product definition and architecture baseline are documented. The initial FastAPI, PostgreSQL, SQLAlchemy, and Alembic foundation is now committed. Local runtime and migration validation are the next checkpoint.
