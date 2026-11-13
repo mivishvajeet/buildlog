@@ -1,3 +1,5 @@
+from uuid import UUID
+
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
@@ -34,7 +36,7 @@ class UserLogin(BaseModel):
 
 
 class UserRead(BaseModel):
-    id: str
+    id: UUID
     email: str
     display_name: str
     timezone: str
