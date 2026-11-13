@@ -8,7 +8,7 @@ FastAPI backend for the Buildlog Personal Engineering Intelligence Platform.
 2. Start PostgreSQL: `docker compose up --build -d db`
 3. Apply migrations: `docker compose run --rm api alembic upgrade head`
 4. Start the API: `docker compose up --build api`
-5. Open [http://localhost:8000/docs](http://localhost:8000/docs).
+5. Open [http://localhost:8001/docs](http://localhost:8001/docs).
 
 ## Database migrations
 
