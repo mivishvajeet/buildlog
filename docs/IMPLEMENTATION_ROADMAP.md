@@ -15,25 +15,25 @@
 
 ## Phase 0 — Repository and project setup
 
-- [ ] Initialize repository and documentation.
-- [ ] Add monorepo structure.
-- [ ] Add README, product scope, architecture, database design, and roadmap.
-- [ ] Add `.gitignore`, `.env.example`, and contribution conventions.
-- [ ] Configure basic CI and branch protection.
+- [x] Initialize repository and documentation.
+- [x] Add monorepo structure.
+- [x] Add README, product scope, architecture, database design, and roadmap.
+- [x] Add `.gitignore` and `.env.example`.
+- [x] Add backend CI workflow.\n- [ ] Configure branch protection.
 
 **Acceptance:** repository initialized, docs committed, no secrets in source control.
 
 ## Phase 1 — Backend foundation
 
-- [ ] FastAPI application and versioned router.
-- [ ] Configuration and environment handling.
-- [ ] PostgreSQL connection.
-- [ ] SQLAlchemy models and Alembic.
-- [ ] Health endpoint and structured logging.
-- [ ] pytest setup.
-- [ ] Docker Compose for backend and local PostgreSQL.
+- [x] FastAPI application and versioned router.
+- [x] Configuration and environment handling.
+- [x] SQLAlchemy PostgreSQL engine and session dependency.
+- [x] Initial SQLAlchemy models and Alembic migration.
+- [x] Liveness and database-readiness endpoints.\n- [ ] Structured logging.
+- [x] pytest setup and initial tests.
+- [x] Docker Compose for backend and local PostgreSQL.
 
-**Acceptance:** application starts locally, clean migrations run, health check and tests pass.
+**Acceptance:** pending local Docker/database execution and green CI confirmation. The code and migration scaffold are committed; runtime validation has not yet been confirmed.
 
 ## Phase 2 — Project and learning registry
 
