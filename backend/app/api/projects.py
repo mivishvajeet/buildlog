@@ -110,6 +110,19 @@ def update_project(
     project = _get_owned_project(project_id, current_user.id, db)
     changes = payload.model_dump(exclude_unset=True)
 
+    if not changes:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="At least one project field must be provided",
+        )
+
+    for required_field in ("name", "status", "visibility"):
+        if required_field in changes and changes[required_field] is None:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail=f"{required_field} cannot be null",
+            )
+
     if "name" in changes and changes["name"] is None:
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
