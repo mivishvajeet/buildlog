@@ -19,7 +19,9 @@
 - [x] Add monorepo structure.
 - [x] Add README, product scope, architecture, database design, and roadmap.
 - [x] Add `.gitignore` and `.env.example`.
-- [x] Add a manually triggered backend CI workflow.\n- [ ] Restore automatic CI after GitHub Actions runners are available.\n- [ ] Configure branch protection.
+- [x] Add a manually triggered backend CI workflow.
+- [ ] Restore automatic CI after GitHub Actions runners are available.
+- [ ] Configure branch protection.
 
 **Acceptance:** repository initialized, docs committed, no secrets in source control.
 
@@ -29,20 +31,21 @@
 - [x] Configuration and environment handling.
 - [x] SQLAlchemy PostgreSQL engine and session dependency.
 - [x] Initial SQLAlchemy models and Alembic migration.
-- [x] Liveness and database-readiness endpoints.\n- [ ] Structured logging.
+- [x] Liveness and database-readiness endpoints.
+- [ ] Structured logging.
 - [x] pytest setup and initial tests.
 - [x] Docker Compose for backend and local PostgreSQL.
 
-**Acceptance:** pending local Docker/database execution and green CI confirmation. The code and migration scaffold are committed; runtime validation has not yet been confirmed.
+**Acceptance:** locally validated on 2026-11-14: Docker Compose PostgreSQL healthy, initial Alembic migration applied, FastAPI running, and database readiness endpoint returned `status=ready, database=ok`. GitHub Actions runner availability and a green CI run remain unconfirmed.
 
 ## Phase 2 — Project and learning registry
 
-- [ ] User and project models.
-- [ ] Project CRUD.
+- [x] User and project models.
+- [x] Project CRUD (create, list, retrieve, update, delete).
 - [ ] Milestone CRUD and weighted progress.
 - [ ] Task CRUD.
 - [ ] Learning tracks, skills, and learning logs.
-- [ ] Validation and ownership checks.
+- [x] Validation and ownership checks for project endpoints.
 
 **Acceptance:** projects and learning records can be managed through tested APIs; milestone progress uses weighted outcomes.
 
