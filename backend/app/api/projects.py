@@ -123,12 +123,6 @@ def update_project(
                 detail=f"{required_field} cannot be null",
             )
 
-    if "name" in changes and changes["name"] is None:
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail="Project name cannot be null",
-        )
-
     if "name" in changes and changes["name"] is not None:
         project.slug = _make_slug(changes["name"], current_user.id, db, exclude_id=project.id)
 
