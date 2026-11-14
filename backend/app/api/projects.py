@@ -59,6 +59,7 @@ def create_project(
         visibility=payload.visibility,
         started_on=payload.started_on,
         target_date=payload.target_date,
+        completed_at=datetime.now(UTC) if payload.status == "completed" else None,
     )
     db.add(project)
     try:
@@ -108,6 +109,12 @@ def update_project(
 ) -> Project:
     project = _get_owned_project(project_id, current_user.id, db)
     changes = payload.model_dump(exclude_unset=True)
+
+    if "name" in changes and changes["name"] is None:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail="Project name cannot be null",
+        )
 
     if "name" in changes and changes["name"] is not None:
         project.slug = _make_slug(changes["name"], current_user.id, db, exclude_id=project.id)
