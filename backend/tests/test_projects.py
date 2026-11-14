@@ -156,3 +156,23 @@ def test_project_creation_validates_payload(client: TestClient, payload: dict) -
     token = register_and_login(client, "validation@example.com")
     response = client.post("/api/v1/projects", headers=auth(token), json=payload)
     assert response.status_code == 422
+
+
+
+def test_project_patch_rejects_empty_or_null_required_fields(client: TestClient) -> None:
+    token = register_and_login(client, "patch-validation@example.com")
+    headers = auth(token)
+    created = client.post(
+        "/api/v1/projects", headers=headers, json={"name": "Patch Validation"}
+    )
+    project_id = created.json()["id"]
+
+    assert client.patch(
+        f"/api/v1/projects/{project_id}", headers=headers, json={}
+    ).status_code == 422
+    assert client.patch(
+        f"/api/v1/projects/{project_id}", headers=headers, json={"status": None}
+    ).status_code == 422
+    assert client.patch(
+        f"/api/v1/projects/{project_id}", headers=headers, json={"name": None}
+    ).status_code == 422
