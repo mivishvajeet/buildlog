@@ -8,10 +8,10 @@ from app.models.user import User
 
 __all__ = [
     "Base",
-    "User",
-    "Project",
-    "Repository",
-    "ProjectRepository",
     "Milestone",
+    "Project",
+    "ProjectRepository",
+    "Repository",
     "Task",
+    "User",
 ]

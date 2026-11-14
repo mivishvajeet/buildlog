@@ -1,7 +1,6 @@
-from fastapi.testclient import TestClient
-
 from app.core.database import get_db
 from app.main import app
+from fastapi.testclient import TestClient
 
 client = TestClient(app)
 

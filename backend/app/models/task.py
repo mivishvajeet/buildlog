@@ -8,8 +8,8 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.models.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
 
 if TYPE_CHECKING:
-    from app.models.project import Project
     from app.models.milestone import Milestone
+    from app.models.project import Project
 
 
 class Task(UUIDPrimaryKeyMixin, TimestampMixin, Base):

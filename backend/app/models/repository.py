@@ -8,6 +8,8 @@ from app.models.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
 
 if TYPE_CHECKING:
     from app.models.project_repository import ProjectRepository
+if TYPE_CHECKING:
+    from app.models.repository import Repository
 
 
 class Repository(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -26,3 +28,4 @@ class Repository(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     project_links: Mapped[list["ProjectRepository"]] = relationship(
         back_populates="repository", cascade="all, delete-orphan"
     )
+
