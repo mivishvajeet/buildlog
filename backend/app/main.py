@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.auth import router as auth_router
+from app.api.projects import router as projects_router
 from app.api.routes import router
 from app.core.config import get_settings
 
@@ -14,6 +15,7 @@ app = FastAPI(
 
 app.include_router(router, prefix=settings.api_v1_prefix)
 app.include_router(auth_router, prefix=settings.api_v1_prefix)
+app.include_router(projects_router, prefix=settings.api_v1_prefix)
 
 
 @app.get("/", tags=["system"])

@@ -1,6 +1,5 @@
-from sqlalchemy.orm import configure_mappers
-
 from app.models import Base, Milestone, Project
+from sqlalchemy.orm import configure_mappers
 
 
 def test_initial_tables_are_registered() -> None:

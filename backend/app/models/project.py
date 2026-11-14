@@ -2,16 +2,26 @@ import uuid
 from datetime import date, datetime
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Boolean, CheckConstraint, Date, DateTime, ForeignKey, String, Text, UniqueConstraint, Uuid
+from sqlalchemy import (
+    Boolean,
+    CheckConstraint,
+    Date,
+    DateTime,
+    ForeignKey,
+    String,
+    Text,
+    UniqueConstraint,
+    Uuid,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
 
 if TYPE_CHECKING:
-    from app.models.user import User
     from app.models.milestone import Milestone
-    from app.models.task import Task
     from app.models.project_repository import ProjectRepository
+    from app.models.task import Task
+    from app.models.user import User
 
 
 class Project(UUIDPrimaryKeyMixin, TimestampMixin, Base):
